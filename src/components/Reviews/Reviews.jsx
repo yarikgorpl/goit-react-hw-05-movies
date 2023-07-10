@@ -36,7 +36,7 @@ const Reviews = () => {
         {reviews.map(el => {
           return (
             <li key={el.id}>
-              {el.total_results === 0 ? (
+              {el.results.length < 1 ? (
                 <p>No reviews for this movie</p>
               ) : (
                 <p>{el.content}</p>
