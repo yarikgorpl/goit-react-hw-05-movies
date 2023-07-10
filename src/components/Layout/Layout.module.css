@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  transition: all 0.5s;
+  background: linear-gradient(to left, #085078, #85d8ce);
+  box-shadow: 0 5px 5px -5px #85d8ce;
+}
+.navigate {
+  cursor: pointer;
+  margin-left: 32px;
+  font-size: 20px;
+  color: black;
+}
+.navigate:active {
+  color: coral;
+}

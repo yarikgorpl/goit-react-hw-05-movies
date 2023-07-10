@@ -1,55 +1,44 @@
 .input {
   display: inline-block;
-  width: 100%;
+  width: 300px;
+  height: 24px;
   font: inherit;
   font-size: 20px;
-  border: 1px solid #000;
-  outline: none;
   padding-left: 4px;
   padding-right: 4px;
+  color: black;
 }
-
 .input::placeholder {
   font: inherit;
-  font-size: 18px;
-}
-.form {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  background-color: #fff;
-  border-radius: 3px;
-  overflow: hidden;
+  font-size: 16px;
+  padding: 4px;
 }
 
-.form_button {
+.button {
+  padding: 2px;
   display: inline-block;
   width: 56px;
-  margin-left: 10px;
-  border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
-  background-size: 40%;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 28px;
   opacity: 0.6;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: 1px solid #000;
+  border-radius: 4px;
 }
 
-.form_button:hover {
+.button:hover {
   opacity: 1;
 }
-
-.form_button_label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.finder {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+.finded {
+  display: block;
+  margin-left: 12px;
+}
+.list {
   padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-  border: 0;
 }

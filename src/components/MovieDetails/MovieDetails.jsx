@@ -1,7 +1,10 @@
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { useEffect, useState, useRef, Suspense } from 'react';
 import getImages from 'services/Api/FullInfo';
+import css from './MovieDetails.module.css';
 import { ColorRing } from 'react-loader-spinner';
+import { FiArrowLeft } from 'react-icons/fi';
+
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -34,14 +37,18 @@ const MovieDetails = () => {
     <section>
       {error && setError(error.message)}
       {isLoading && <ColorRing />}
-      <Link to={backLincLocationRef.current}>Go back</Link>
+      <button className={css.button}>
+        <FiArrowLeft />
+        <Link to={backLincLocationRef.current}>Go back</Link>
+      </button>
+
       <div>
         <img
           src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
           alt=""
         />
         <div>
-          <h1>{movie.title}</h1>
+          <h1>{movie.title + ' (' + movie.release_date + ')'}</h1>
           <p>User score:{Math.round(movie.vote_average * 10)}%</p>
           <h2>Overview</h2>
           <p>{movie.overview}</p>

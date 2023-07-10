@@ -29,22 +29,20 @@ const Reviews = () => {
 
   return (
     <section>
-      <ul>
-        {error && setError(error.message)}
-        {isLoading && <ColorRing />}
+      {error && setError(error.message)}
+      {isLoading && <ColorRing />}
 
-        {reviews.map(el => {
-          return (
+      {reviews.length < 1 ? (
+        <p>No reviews for this movie</p>
+      ) : (
+        <ul>
+          {reviews.map(el => (
             <li key={el.id}>
-              {el.results.length < 1 ? (
-                <p>No reviews for this movie</p>
-              ) : (
-                <p>{el.content}</p>
-              )}
+              <p>{el.content}</p>
             </li>
-          );
-        })}
-      </ul>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };

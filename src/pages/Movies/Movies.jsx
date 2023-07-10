@@ -82,6 +82,7 @@ import { useState } from 'react';
 import css from './Movies.module.css';
 import getImages from 'services/Api/Search';
 import { ColorRing } from 'react-loader-spinner';
+import PropTypes from 'prop-types';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -127,20 +128,24 @@ const Movies = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={movieId}
-        className={css.input}
-        onChange={updateQueryString}
-      />
-      <button type="submit" className={css.form_button} onClick={handleSearch}>
-        Search
-      </button>
-      <section>
+    <>
+      <section className={css.finder}>
+        <input
+          className={css.input}
+          type="text"
+          placeholder="Search movies"
+          value={movieId}
+          onChange={updateQueryString}
+        />
+        <button type="submit" className={css.button} onClick={handleSearch}>
+          Search
+        </button>
+      </section>
+
+      <section className={css.finded}>
         {error && setError(error.message)}
         {isLoading && <ColorRing />}
-        <ul>
+        <ul className={css.list}>
           {movies.map(movie => {
             return (
               <li key={movie.id}>
@@ -152,8 +157,12 @@ const Movies = () => {
           })}
         </ul>
       </section>
-    </div>
+    </>
   );
 };
 
 export default Movies;
+Movies.propTypes = {
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+};
