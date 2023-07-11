@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import getImages from 'services/Api/Reviews';
+import getInfo from 'services/Api/Reviews';
 import { ColorRing } from 'react-loader-spinner';
 
 const Reviews = () => {
@@ -14,7 +14,7 @@ const Reviews = () => {
     const fetchImages = () => {
       setIsLoading(true);
 
-      getImages(movieId)
+      getInfo(movieId)
         .then(response => response.json())
         .then(response => setReviews(response.results))
         .catch(error => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import getImages from 'services/Api/Tranding';
+import getInfo from 'services/Api/Tranding';
 import { ColorRing } from 'react-loader-spinner';
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
     const fetchImages = () => {
       setIsLoading(true);
 
-      getImages()
+      getInfo()
         .then(response => response.json())
         .then(data => {
           setMovies(data.results);

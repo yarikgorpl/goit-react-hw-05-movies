@@ -7,10 +7,10 @@ const options = {
   },
 };
 
-const getImages = () =>
+const getInfo = () =>
   fetch(
     'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
     options
   );
 
-export default getImages;
+export default getInfo;

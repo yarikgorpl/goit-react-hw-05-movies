@@ -7,10 +7,10 @@ const options = {
   },
 };
 
-const getImages = movieId =>
+const getInfo = movieId =>
   fetch(
     `https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page=1`,
     options
   );
 
-export default getImages;
+export default getInfo;

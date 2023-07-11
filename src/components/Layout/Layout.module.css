@@ -16,6 +16,6 @@
   font-size: 20px;
   color: black;
 }
-.navigate:active {
-  color: coral;
+.active {
+  cursor: pointer;
 }

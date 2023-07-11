@@ -6,12 +6,26 @@ const Layout = () => {
     <div>
       <header className={css.header}>
         <nav>
-          <NavLink className={css.navigate} to="/">
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                color: isActive ? 'coral' : 'black',
+              };
+            }}
+            to="/"
+          >
             Home
           </NavLink>
         </nav>
         <nav>
-          <NavLink className={css.navigate} to="/movies">
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                color: isActive ? 'coral' : 'black',
+              };
+            }}
+            to="/movies"
+          >
             Movies
           </NavLink>
         </nav>

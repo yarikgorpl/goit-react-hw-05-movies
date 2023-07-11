@@ -1,6 +1,6 @@
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 import { useEffect, useState, useRef, Suspense } from 'react';
-import getImages from 'services/Api/FullInfo';
+import getInfo from 'services/Api/FullInfo';
 import css from './MovieDetails.module.css';
 import { ColorRing } from 'react-loader-spinner';
 import { FiArrowLeft } from 'react-icons/fi';
@@ -20,7 +20,7 @@ const MovieDetails = () => {
     const fetchImages = () => {
       setIsLoading(true);
 
-      getImages(movieId)
+      getInfo(movieId)
         .then(response => response.json())
         .then(response => setMovie(response))
         .catch(error => {
